@@ -4,10 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Merwin — Klaviyo Email Marketing Specialist</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<meta name="description" content="Klaviyo email strategy, flows, campaigns, and reporting for e-commerce brands. Explore Merwin Vilvar's work and get in touch.">
+<link rel="stylesheet" href="redesign.css">
 </head>
 <body>
 
@@ -31,69 +29,39 @@
 
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="hero-kicker">Klaviyo Email Marketing Specialist</p>
+    <div class="hero-sheet">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title">
+            <span class="hero-title-shadow" aria-hidden="true">Good email<br>keeps going.</span>
+            <span class="hero-title-front">Good email<br><em>keeps going.</em></span>
+          </h1>
+          <p class="hero-sub">I build and manage Klaviyo email programs for e-commerce brands — strategy, flows, segmentation, copy, design, and the reporting to prove it's working.</p>
+          <div class="hero-actions">
+            <a href="mailto:merwinvilvar626@gmail.com" class="btn btn-primary">Email Merwin about your brand <span aria-hidden="true">↗</span></a>
+            <a href="#work" class="btn btn-ghost">Explore the case studies</a>
+          </div>
+        </div>
 
-    <div class="hero-inbox" aria-hidden="true">
-      <div class="inbox-row">
-        <span class="inbox-dot"></span>
-        <span><span class="inbox-subj">Your cart is waiting</span> — <span class="inbox-preview">still thinking it over? Here's 10% to help you decide...</span></span>
-        <span class="inbox-time">Flow</span>
+        <aside class="proof-insert" aria-label="Welcome flow case study preview">
+          <h2>First trust.<br>Then the offer.</h2>
+          <div class="insert-colophon"><span>Actual store / Bwll</span><span>Welcome flow</span></div>
+          <p class="insert-copy">A three-email welcome sequence that earns attention before it asks for the sale.</p>
+          <ol class="insert-sequence">
+            <li><span>01</span><strong>Brand story</strong><small>Start with why it exists</small></li>
+            <li><span>02</span><strong>Curated bestsellers</strong><small>Make the choice feel considered</small></li>
+            <li><span>03</span><strong>Deadline, with context</strong><small>Urgency after goodwill</small></li>
+          </ol>
+          <a class="insert-link" href="#case-welcome">Read the strategy <span aria-hidden="true">↘</span></a>
+        </aside>
       </div>
-      <div class="inbox-row">
-        <span class="inbox-dot"></span>
-        <span><span class="inbox-subj">Early access starts now</span> — <span class="inbox-preview">VIPs get first pick before Black Friday goes live</span></span>
-        <span class="inbox-time">Campaign</span>
+      <div class="sheet-footer">
+        <span>Strategy / flows / campaigns / reporting</span>
+        <button class="register-toggle" type="button" aria-pressed="false" data-register-toggle>Shift the ink</button>
       </div>
-      <div class="inbox-row read">
-        <span class="inbox-dot"></span>
-        <span><span class="inbox-subj">Welcome — here's 15% off your first order</span> — <span class="inbox-preview">glad you're here. A few things to know first...</span></span>
-        <span class="inbox-time">Flow</span>
-      </div>
-    </div>
-
-    <h1 class="hero-title">Email programs that <em>earn</em> the next open, not just the first click.</h1>
-    <p class="hero-sub">I build and manage Klaviyo email programs for e-commerce brands — strategy, flows, segmentation, copy, design, and the reporting to prove it's working.</p>
-    <div class="hero-actions">
-      <a href="#work" class="btn btn-primary">See the case studies</a>
-      <a href="#contact" class="btn btn-ghost">Work with me</a>
     </div>
   </div>
 </header>
-
-<section id="what-i-do">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>What I do</h2>
-      <p>End-to-end ownership of the email channel — not just building what's briefed, but deciding what should be sent.</p>
-    </div>
-    <div class="cap-grid">
-      <div class="cap-item">
-        <h3>Campaign strategy &amp; management</h3>
-        <p>Calendar planning, offer sequencing, and send-time strategy built around how your audience actually buys.</p>
-      </div>
-      <div class="cap-item">
-        <h3>Klaviyo flows &amp; automation</h3>
-        <p>Welcome flow, abandoned cart, post-purchase, win-back, browse abandonment — built once, tuned continuously.</p>
-      </div>
-      <div class="cap-item">
-        <h3>Email copywriting</h3>
-        <p>Subject lines and body copy written to be opened and acted on, not just read.</p>
-      </div>
-      <div class="cap-item">
-        <h3>Design → Klaviyo deployment</h3>
-        <p>From Figma or Canva concept to a responsive, on-brand email built directly in Klaviyo.</p>
-      </div>
-      <div class="cap-item">
-        <h3>Segmentation &amp; personalization</h3>
-        <p>Messaging that changes based on who's reading it — engagement, purchase history, product interest, lifecycle stage.</p>
-      </div>
-      <div class="cap-item">
-        <h3>Performance reporting &amp; optimization</h3>
-        <p>Reading the numbers past open rate — placed-order rate, revenue per recipient, and what to test next.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="work">
   <div class="wrap">
@@ -103,7 +71,7 @@
     </div>
 
     <!-- CASE 01 -->
-    <div class="case" data-case>
+    <div class="case" data-case id="case-welcome">
       <div class="case-head" role="button" tabindex="0" aria-expanded="false">
         <div class="case-head-left">
           <p class="case-title">Welcome Flow</p>
@@ -125,11 +93,11 @@
           </div>
           <div class="case-cols">
             <div>
-              <h4>Why this structure</h4>
+              <h3>Why this structure</h3>
               <p>The first email earns trust before it sells anything — no discount, just what the brand is and why it exists. The second email does the selling, using bestsellers rather than a catalog dump so the choice feels curated. The third email introduces urgency only once goodwill is established, so it reads as a nudge rather than a hard sell.</p>
             </div>
             <div>
-              <h4>Segmentation</h4>
+              <h3>Segmentation</h3>
               <ul>
                 <li>Suppressed for anyone who purchases mid-flow</li>
                 <li>Discount code swapped for a "you're already a customer" variant if they'd bought before signing up</li>
@@ -166,11 +134,11 @@
           </div>
           <div class="case-cols">
             <div>
-              <h4>Why this structure</h4>
+              <h3>Why this structure</h3>
               <p>Shoppers get distracted at checkout, and that's where a lot of revenue quietly disappears. This flow catches it before it's gone. Email 1 is just a nudge, no discount. Email 2 clears up the usual holdups, shipping cost, sizing doubt, whatever's stalling them. Email 3 is the last card to play, a discount, only if the first two didn't close it.</p>
             </div>
             <div>
-              <h4>Segmentation</h4>
+              <h3>Segmentation</h3>
               <ul>
                 <li>High-cart-value shoppers receive a free-shipping upgrade instead of a percentage discount to protect your margins.</li>
                 <li>Chronic abandoners are capped at one discount per 30 days to prevent abuse.</li>
@@ -196,7 +164,7 @@
           <p class="case-goal"><strong>Goal:</strong> Spread demand across three weeks instead of concentrating it — and losing it to inbox fatigue — on one day.</p>
           <div class="case-cols">
             <div>
-              <h4>Pre-BFCM (2 weeks out)</h4>
+              <h3>Pre-BFCM (2 weeks out)</h3>
               <ul>
                 <li>Teaser: something's coming, no details</li>
                 <li>Early access: VIP segment gets a 24-hour head start</li>
@@ -204,7 +172,7 @@
               </ul>
             </div>
             <div>
-              <h4>BFCM week</h4>
+              <h3>BFCM week</h3>
               <ul>
                 <li>Launch email at 6am local time, segmented by timezone</li>
                 <li>Mid-sale reminder to openers-who-didn't-buy only</li>
@@ -214,7 +182,7 @@
           </div>
           <div class="case-cols" style="margin-top:22px;">
             <div>
-              <h4>Post-BFCM</h4>
+              <h3>Post-BFCM</h3>
               <ul>
                 <li>Thank-you email — no ask, just confirms the order and sets shipping expectations</li>
                 <li>Cross-sell based on what they bought</li>
@@ -222,7 +190,7 @@
               </ul>
             </div>
             <div>
-              <h4>Why this structure</h4>
+              <h3>Why this structure</h3>
               <p>VIP early access rewards the list you already earned instead of treating every subscriber identically. Segmenting the mid-sale reminder to openers-who-didn't-buy avoids re-fatiguing people who already said no by not opening.</p>
             </div>
           </div>
@@ -255,7 +223,7 @@
           </div>
           <div class="case-cols">
             <div>
-              <h4>QA checklist used</h4>
+              <h3>QA checklist used</h3>
               <ul>
                 <li>Every link and UTM tested individually</li>
                 <li>Discount code tested at checkout, not just visually</li>
@@ -264,7 +232,7 @@
               </ul>
             </div>
             <div>
-              <h4>Why it matters</h4>
+              <h3>Why it matters</h3>
               <p>Blasting "Buy Now" to your whole list trains people to ignore you, and it dings your sender reputation while it's at it. This campaign does the opposite — rewards your best buyers first, saves the urgency push for the fence-sitters. Message shifts with loyalty, so it reads as personal, not pushy.</p>
             </div>
           </div>
@@ -286,7 +254,7 @@
           <p class="case-goal"><strong>Goal:</strong> The same campaign, worded differently depending on who's opening it.</p>
           <div class="case-cols">
             <div>
-              <h4>Segments built</h4>
+              <h3>Segments built</h3>
               <ul>
                 <li>Engaged vs. unengaged (opened/clicked in 90 days)</li>
                 <li>First-time vs. repeat customers</li>
@@ -296,7 +264,7 @@
               </ul>
             </div>
             <div>
-              <h4>How the message shifts</h4>
+              <h3>How the message shifts</h3>
               <ul>
                 <li>VIPs get early access framing, never a generic discount</li>
                 <li>First-timers get reassurance copy (returns, shipping, reviews)</li>
@@ -342,6 +310,41 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<section id="what-i-do">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What I do</h2>
+      <p>End-to-end ownership of the email channel — not just building what's briefed, but deciding what should be sent.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-item">
+        <h3>Campaign strategy &amp; management</h3>
+        <p>Calendar planning, offer sequencing, and send-time strategy built around how your audience actually buys.</p>
+      </div>
+      <div class="cap-item">
+        <h3>Klaviyo flows &amp; automation</h3>
+        <p>Welcome flow, abandoned cart, post-purchase, win-back, browse abandonment — built once, tuned continuously.</p>
+      </div>
+      <div class="cap-item">
+        <h3>Email copywriting</h3>
+        <p>Subject lines and body copy written to be opened and acted on, not just read.</p>
+      </div>
+      <div class="cap-item">
+        <h3>Design → Klaviyo deployment</h3>
+        <p>From Figma or Canva concept to a responsive, on-brand email built directly in Klaviyo.</p>
+      </div>
+      <div class="cap-item">
+        <h3>Segmentation &amp; personalization</h3>
+        <p>Messaging that changes based on who's reading it — engagement, purchase history, product interest, lifecycle stage.</p>
+      </div>
+      <div class="cap-item">
+        <h3>Performance reporting &amp; optimization</h3>
+        <p>Reading the numbers past open rate — placed-order rate, revenue per recipient, and what to test next.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -444,7 +447,7 @@
     </div>
     <div class="foot-bottom">
       <span>Merwin Vilvar — Klaviyo Email Marketing Specialist</span>
-      <span><a href="#top">Back to top â†‘</a></span>
+      <span><a href="#top">Back to top</a></span>
     </div>
   </div>
 </footer>
@@ -497,6 +500,16 @@
     var body = first.querySelector('.case-body');
     body.style.maxHeight = body.scrollHeight + 'px';
     first.querySelector('.case-head').setAttribute('aria-expanded','true');
+  }
+
+  var registerToggle = document.querySelector('[data-register-toggle]');
+  if(registerToggle){
+    registerToggle.addEventListener('click', function(){
+      var shifted = registerToggle.getAttribute('aria-pressed') !== 'true';
+      document.body.classList.toggle('is-unregistered', shifted);
+      registerToggle.setAttribute('aria-pressed', String(shifted));
+      registerToggle.textContent = shifted ? 'Align the inks' : 'Shift the ink';
+    });
   }
 </script>
 
