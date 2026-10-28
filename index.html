@@ -40,7 +40,7 @@
           </h1>
           <p class="hero-sub">I build and manage Klaviyo email programs for e-commerce brands — strategy, flows, segmentation, copy, design, and the reporting to prove it's working.</p>
           <div class="hero-actions">
-            <a href="mailto:merwinvilvar626@gmail.com" class="btn btn-primary">Email Merwin about your brand <span aria-hidden="true">↗</span></a>
+            <a href="#contact" class="btn btn-primary">Start a conversation <span aria-hidden="true">↗</span></a>
             <a href="#work" class="btn btn-ghost">Explore the case studies</a>
           </div>
         </div>
@@ -579,20 +579,32 @@
       if(!email) return;
 
       try{
+        var copied = false;
         if(navigator.clipboard && window.isSecureContext){
-          await navigator.clipboard.writeText(email);
-        }else{
+          try{
+            await navigator.clipboard.writeText(email);
+            copied = true;
+          }catch(error){
+            copied = false;
+          }
+        }
+
+        if(!copied){
           var temporaryInput = document.createElement('textarea');
           temporaryInput.value = email;
           temporaryInput.setAttribute('readonly', '');
           temporaryInput.style.position = 'absolute';
           temporaryInput.style.left = '-9999px';
           document.body.appendChild(temporaryInput);
-          temporaryInput.select();
-          var copied = document.execCommand('copy');
-          temporaryInput.remove();
-          if(!copied) throw new Error('Clipboard copy was not available.');
+          try{
+            temporaryInput.select();
+            copied = document.execCommand('copy');
+          }finally{
+            temporaryInput.remove();
+          }
         }
+
+        if(!copied) throw new Error('Clipboard copy was not available.');
         copyIndicator.textContent = 'Email copied!';
       }catch(error){
         copyIndicator.textContent = 'Copy failed. Select the email address to copy it.';
