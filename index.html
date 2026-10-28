@@ -442,10 +442,50 @@
       <h2>Let's build your next flow</h2>
       <p>Currently open for freelance and full-time Klaviyo / retention roles.</p>
     </div>
-    <div class="contact-row">
-      <a href="mailto:merwinvilvar626@gmail.com" class="btn btn-primary">merwinvilvar626@gmail.com</a>
-      <a href="https://www.linkedin.com/in/merwin-vilvar-va/" class="btn btn-ghost">LinkedIn</a>
-      <a href="https://www.upwork.com/freelancers/~015ef9ff57dfde5e52?mp_source=share" class="btn btn-ghost">Upwork</a>
+    <div class="contact-grid">
+      <div class="contact-aside">
+        <p class="contact-intro">Tell me what your email program needs next, or reach out directly using whichever channel works for you.</p>
+        <div class="email-copy-row">
+          <a href="mailto:merwinvilvar626@gmail.com" class="contact-email">merwinvilvar626@gmail.com</a>
+          <button class="copy-email-button" type="button" aria-label="Copy email address" data-copy-email>
+            <img src="icons/copy-svgrepo-com.svg" alt="Copy email" class="copy-icon" aria-hidden="true">
+          </button>
+          <span class="copy-indicator" role="status" aria-live="polite"></span>
+        </div>
+        <a class="btn btn-primary whatsapp-btn" href="https://wa.me/639946354070?text=Hello%20Merwin%2C%20I%20would%20like%20to%20discuss%20my%20project." target="_blank" rel="noopener noreferrer">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 11.5a7.5 7.5 0 0 1-11.2 6.5L4 19l1.1-4.1A7.5 7.5 0 1 1 20 11.5Z"/>
+            <path d="M9 8.5c.3 2 2 3.7 4 4l1.2-1.2 2 1.1-.2 1.8c-3.5.4-7.5-3.5-7.1-7.1l1.8-.2 1.1 2L10.6 10"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+        <div class="contact-socials" aria-label="More ways to connect">
+          <a href="https://www.linkedin.com/in/merwin-vilvar-va/" class="btn btn-ghost">LinkedIn</a>
+          <a href="https://www.upwork.com/freelancers/~015ef9ff57dfde5e52?mp_source=share" class="btn btn-ghost">Upwork</a>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <h3>Tell me about your project</h3>
+        <div class="form-fields">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="from_name" placeholder="Jane Smith" autocomplete="name" required minlength="2" maxlength="80">
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="user_email" placeholder="jane@company.com" autocomplete="email" required maxlength="120">
+          </div>
+          <div class="form-group form-group-message">
+            <label for="contact-message">Project description</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="What are you hoping to improve or build?" required minlength="10" maxlength="1200"></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Send project inquiry</button>
+          <p class="form-note">This opens a draft in your email app so you can review it before sending.</p>
+        </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
     <div class="foot-bottom">
       <span>Merwin Vilvar — Klaviyo Email Marketing Specialist</span>
@@ -511,6 +551,52 @@
       document.body.classList.toggle('is-unregistered', shifted);
       registerToggle.setAttribute('aria-pressed', String(shifted));
       registerToggle.textContent = shifted ? 'Align the inks' : 'Shift the ink';
+    });
+  }
+
+  var contactForm = document.getElementById('contact-form');
+  if(contactForm){
+    contactForm.addEventListener('submit', function(event){
+      event.preventDefault();
+      var formData = new FormData(contactForm);
+      var name = String(formData.get('from_name') || '').trim();
+      var email = String(formData.get('user_email') || '').trim();
+      var message = String(formData.get('message') || '').trim();
+      var subject = 'Project inquiry from ' + name;
+      var body = 'Name: ' + name + '\nEmail: ' + email + '\n\nProject description:\n' + message;
+      var mailto = 'mailto:merwinvilvar626@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      contactForm.querySelector('.form-status').textContent = 'Your email app should open with a draft. If it does not, email merwinvilvar626@gmail.com directly.';
+      window.location.href = mailto;
+    });
+  }
+
+  var copyEmailButton = document.querySelector('[data-copy-email]');
+  var copyIndicator = document.querySelector('.copy-indicator');
+  if(copyEmailButton && copyIndicator){
+    copyEmailButton.addEventListener('click', async function(){
+      var emailLink = document.querySelector('.contact-email');
+      var email = emailLink ? emailLink.textContent.trim() : '';
+      if(!email) return;
+
+      try{
+        if(navigator.clipboard && window.isSecureContext){
+          await navigator.clipboard.writeText(email);
+        }else{
+          var temporaryInput = document.createElement('textarea');
+          temporaryInput.value = email;
+          temporaryInput.setAttribute('readonly', '');
+          temporaryInput.style.position = 'absolute';
+          temporaryInput.style.left = '-9999px';
+          document.body.appendChild(temporaryInput);
+          temporaryInput.select();
+          var copied = document.execCommand('copy');
+          temporaryInput.remove();
+          if(!copied) throw new Error('Clipboard copy was not available.');
+        }
+        copyIndicator.textContent = 'Email copied!';
+      }catch(error){
+        copyIndicator.textContent = 'Copy failed. Select the email address to copy it.';
+      }
     });
   }
 </script>
